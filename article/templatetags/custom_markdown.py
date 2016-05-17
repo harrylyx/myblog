@@ -1,11 +1,11 @@
 import markdown
 
-from django import template
-from django.template.defaultfilters import stringfilter
+from django import templates
+from django.templates.defaultfilters import stringfilter
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
 
-register = template.Library()  #自定义filter时必须加上
+register = templates.Library()  #自定义filter时必须加上
 
 
 @register.filter(is_safe=True)  #注册template filter
