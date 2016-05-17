@@ -18,7 +18,7 @@ from django.contrib import admin
 from article import views as article_views
 
 urlpatterns = [
-    url(r'^$', article_views.index, name='index'),
+    url(r'^artcles/', include('artile.urls')),
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^(?P<id>\d+)/$', 'article.views.detail', name='detail'),
+
 ]
