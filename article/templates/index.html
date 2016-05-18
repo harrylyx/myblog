@@ -19,8 +19,8 @@
                         {{ post.content|markdown|safe|truncatechars:100 }}
                     </p>
                 </div>
-            <a class="btn btn-primary btn-lg" role="button" href="{% url 'detail' post.id %}">Read More >>> </a>
             </section>
+            <a class="btn btn-primary btn-lg" role="button" href="{% url 'detail' post.id %}">Read More >>> </a>
         </div>
     </div>
     {% endfor %}
