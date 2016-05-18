@@ -1,5 +1,4 @@
 {% extends "base.html" %}
-{% load markdown_deux_tags %}
 
 {% block content %}
 <div class="posts">
@@ -16,7 +15,7 @@
                 </header>
                 <div class="container">
                     <p>
-                        {{ post.content|markdown|safe|truncatechars:100 }}
+                        {{ post.content|safe|truncatechars:100 }}
                     </p>
                 </div>
             </section>
