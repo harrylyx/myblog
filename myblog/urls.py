@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^$', article_views.index, name='index'),
     url(r'^artciles/', include('article.urls')),
     url(r'^admin/', include(admin.site.urls)),
+    url(r'^archives/$', 'article.views.archives', name = 'archives'),
+    url(r'^aboutme/$', 'article.views.about_me', name = 'about_me'),
 
 ]
