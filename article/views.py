@@ -17,7 +17,7 @@ def detail(request, id):
         post.content = markdown.markdown(post.content,extensions=['markdown.extensions.extra','markdown.extensions.codehilite'])
     except Article.DoesNotExist:
         raise Http404
-    return render(request, '/post.html', {'post': post})
+    return render(request, 'post.html', {'post': post})
 
 def archives(request) :
     try:
