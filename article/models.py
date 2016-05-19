@@ -7,7 +7,7 @@ class Article(models.Model) :
     title = models.CharField(max_length = 100)  
     category = models.CharField(max_length = 50, blank = True)  
     date_time = models.DateTimeField(auto_now_add = True)
-    shortContent = models.TextField(max_length = 100,blank = True, null = True)
+    shortContent = models.CharField(max_length = 100,blank = True, null = True)
     content = models.TextField(blank = True, null = True)
 
 
