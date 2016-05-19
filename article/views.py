@@ -11,10 +11,10 @@ def index(request):
     post_list = Article.objects.all()
     return render(request, 'index.html', {'post_list' : post_list})
 
-def detail(request, categroy, id):
+def detail(request, id):
     try:
         post = Article.objects.get(id=str(id))
-        cate = Article.objects.get(categroy)
+        cate = Article.objects.get(post.categroy)
         post.content = markdown.markdown(post.content,extensions=['markdown.extensions.extra','markdown.extensions.codehilite'])
     except Article.DoesNotExist:
         raise Http404
