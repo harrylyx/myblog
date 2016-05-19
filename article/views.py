@@ -11,7 +11,7 @@ def index(request):
     post_list = Article.objects.all()
     return render(request, 'index.html', {'post_list' : post_list})
 
-def detail(request, id):
+def detail(request, id, categroy):
     try:
         post = Article.objects.get(id=str(id))
         post.content = markdown.markdown(post.content,extensions=['markdown.extensions.extra','markdown.extensions.codehilite'])
