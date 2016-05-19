@@ -14,10 +14,11 @@ def index(request):
 def detail(request, id, categroy):
     try:
         post = Article.objects.get(id=str(id))
+        categroy = Article.objects.get(categroy)
         post.content = markdown.markdown(post.content,extensions=['markdown.extensions.extra','markdown.extensions.codehilite'])
     except Article.DoesNotExist:
         raise Http404
-    return render(request, 'post.html', {'post': post})
+    return render(request, 'categroy/post.html', {'categroy': categroy, 'post': post})
 
 def archives(request) :
     try:
