@@ -11,7 +11,7 @@ def index(request):
     post_list = Article.objects.all()
     return render(request, 'index.html', {'post_list' : post_list})
 
-def detail(request, id, categroy):
+def detail(request, categroy, id):
     try:
         post = Article.objects.get(id=str(id))
         cate = Article.objects.get(categroy)
