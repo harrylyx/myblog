@@ -30,3 +30,8 @@ def archives(request) :
 def about_me(request) :
     return render(request, 'aboutme.html')
 
+def google(request) :
+    return render(request, 'googledcbd985fda3b59cb.html')
+
+def baidu(request) :
+    return render(request, 'baidu_verify_MvQnvdgfUB.html')
