@@ -19,7 +19,7 @@
                     </p>
                 </div>
             </section>
-            <a class="btn btn-primary btn-lg" role="button" href="{% url 'detail' post.id %}">Read More >>> </a>
+            <a class="btn btn-primary btn-lg" role="button" href="{% url 'detail' id=post.id category=post.category %}">Read More >>> </a>
         </div>
     </div>
     {% endfor %}
