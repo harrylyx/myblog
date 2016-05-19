@@ -6,5 +6,5 @@ from article import views as article_views
 
 urlpatterns = [
     url(r'^$', article_views.index, name='index'),
-    url(r'^(?P<category>\S+)/(?P<id>\d+)/$', article_views.detail, name='detail'),
+    url(r'^(?P<id>\d+)/$', article_views.detail, name='detail'),
 ]
