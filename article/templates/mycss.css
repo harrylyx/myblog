@@ -10,3 +10,8 @@ body{
 #LG{
 	background-color: #fff;
 }
+.footer{
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+}
