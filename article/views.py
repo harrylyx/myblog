@@ -35,3 +35,9 @@ def google(request) :
 
 def baidu(request) :
     return render(request, 'baidu_verify_MvQnvdgfUB.html')
+
+def mycss(request) :
+    return render(request, 'mycss.css')
+
+def friendly(request) :
+    return render(request, 'friendly.css')
