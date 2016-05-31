@@ -38,19 +38,15 @@ def google(request) :
 def baidu(request) :
     return render(request, 'baidu_verify_MvQnvdgfUB.html')
 
-def listing(request):
-    contact_list = Article.objects.all()
-    paginator = Paginator(contact_list, 6) # Show 6 contacts per page
-
+def index(request):
+    posts = Article.objects.all()  #获取全部的Article对象
+    paginator = Paginator(posts, 5) #每页显示两个
     page = request.GET.get('page')
-    try:
-        contacts = paginator.page(page)
-    except PageNotAnInteger:
-        # If page is not an integer, deliver first page.
-        contacts = paginator.page(1)
-    except EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        contacts = paginator.page(paginator.num_pages)
-
-    return render(request, 'index.html', {'contacts': contacts})
+    try :
+        post_list = paginator.page(page)
+    except PageNotAnInteger :
+        post_list = paginator.page(1)
+    except EmptyPage :
+        post_list = paginator.paginator(paginator.num_pages)
+    return render(request, 'index.html', {'post_list' : post_list})
 

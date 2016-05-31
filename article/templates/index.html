@@ -39,19 +39,20 @@
     </div>
     {% endfor %}
 
+    {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
     <div class="pagination">
         <nav>
           <ul class="pager">
             <li class="previous">
-                {% if contacts.has_previous %}
-                <a href="?page={{ contacts.previous_page_number }}">
+                {% if post_list.has_previous %}
+                <a href="?page={{ post_list.previous_page_number }}">
                     <span aria-hidden="true">&larr;</span> Older
                 </a>
                 {% endif %}
             </li>
             <li class="next">
-                {% if contacts.has_next %}
-                <a href="?page={{ contacts.next_page_number }}">Newer
+                {% if post_list.has_next %}
+                <a href="?page={{ post_list.next_page_number }}">Newer
                     <span aria-hidden="true">&rarr;</span>
                 </a>
                 {% endif %}
