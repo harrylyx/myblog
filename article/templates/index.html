@@ -38,5 +38,26 @@
         </div>
     </div>
     {% endfor %}
+
+    <div class="pagination">
+        <nav>
+          <ul class="pager">
+            <li class="previous">
+                {% if contacts.has_previous %}
+                <a href="?page={{ contacts.previous_page_number }}">
+                    <span aria-hidden="true">&larr;</span> Older
+                </a>
+                {% endif %}
+            </li>
+            <li class="next">
+                {% if contacts.has_next %}
+                <a href="?page={{ contacts.next_page_number }}">Newer
+                    <span aria-hidden="true">&rarr;</span>
+                </a>
+                {% endif %}
+            </li>
+          </ul>
+        </nav>
+    </div>
 </div><!-- /.blog-post -->
 {% endblock %}

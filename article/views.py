@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from article.models import Article
 from datetime import datetime
 from django.http import Http404
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import render
 import markdown
 
 # Create your views here.
@@ -35,4 +37,20 @@ def google(request) :
 
 def baidu(request) :
     return render(request, 'baidu_verify_MvQnvdgfUB.html')
+
+def listing(request):
+    contact_list = Article.objects.all()
+    paginator = Paginator(contact_list, 6) # Show 6 contacts per page
+
+    page = request.GET.get('page')
+    try:
+        contacts = paginator.page(page)
+    except PageNotAnInteger:
+        # If page is not an integer, deliver first page.
+        contacts = paginator.page(1)
+    except EmptyPage:
+        # If page is out of range (e.g. 9999), deliver last page of results.
+        contacts = paginator.page(paginator.num_pages)
+
+    return render(request, 'index.html', {'contacts': contacts})
 
