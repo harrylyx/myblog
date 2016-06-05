@@ -16,7 +16,7 @@ def index(request):
 def detail(request, id):
     try:
         post = Article.objects.get(id=str(id))
-        post.content = markdown.markdown(post.content,extensions=['markdown.extensions.extra','markdown.extensions.codehilite'])
+        post.content = markdown.markdown(post.content, extensions=['markdown.extensions.extra', 'markdown.extensions.codehilite'])
     except Article.DoesNotExist:
         raise Http404
     return render(request, 'post.html', {'post': post})
@@ -42,11 +42,11 @@ def index(request):
     posts = Article.objects.all()  #获取全部的Article对象
     paginator = Paginator(posts, 5) #每页显示两个
     page = request.GET.get('page')
-    try :
+    try:
         post_list = paginator.page(page)
-    except PageNotAnInteger :
+    except PageNotAnInteger:
         post_list = paginator.page(1)
-    except EmptyPage :
+    except EmptyPage:
         post_list = paginator.paginator(paginator.num_pages)
-    return render(request, 'index.html', {'post_list' : post_list})
+    return render(request, 'index.html', {'post_list': post_list})
 
