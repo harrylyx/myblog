@@ -39,7 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article',
     'markdown_deux',
+    'duoshuo',
 ]
+
+DUOSHUO_SECRET = 'c8f19075d7ee29e5d4dbfabff9a0937b'
+
+DUOSHUO_SHORT_NAME = 'Crazycabbage'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
