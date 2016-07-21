@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^aboutme/$', 'article.views.about_me', name = 'about_me'),
     url(r'^googledcbd985fda3b59cb.html/$', 'article.views.google', name = 'google'),
     url(r'^baidu_verify_MvQnvdgfUB.html/$', 'article.views.baidu', name = 'baidu'),
-
+    url(r'^404.html/$', 'article.views.notfound', name = '404'),
 
 ]
 

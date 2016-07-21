@@ -38,6 +38,9 @@ def google(request) :
 def baidu(request) :
     return render(request, 'baidu_verify_MvQnvdgfUB.html')
 
+def notfound(request) :
+    return render(request, '404.html')
+
 def index(request):
     posts = Article.objects.all()  #获取全部的Article对象
     paginator = Paginator(posts, 5) #每页显示两个
