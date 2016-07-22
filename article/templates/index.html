@@ -39,6 +39,23 @@
     </div>
     {% endfor %}
 
+    <div class="pagination">
+        <span class="step-links">
+            {% if contacts.has_previous %}
+                <a href="?page={{ post_list.previous_page_number }}">previous</a>
+            {% endif %}
+
+            <span class="current">
+                Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.
+            </span>
+
+            {% if contacts.has_next %}
+                <a href="?page={{ post_list.next_page_number }}">next</a>
+            {% endif %}
+        </span>
+    </div>
+
+    <!--
     {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
     <div class="pagination">
         <nav>
@@ -61,5 +78,6 @@
         </nav>
     </div>
     {% endif %}
+    -->
 </div><!-- /.blog-post -->
 {% endblock %}
