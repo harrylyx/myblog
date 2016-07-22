@@ -9,9 +9,9 @@ from django.shortcuts import render
 import markdown
 
 # Create your views here.
-def index(request):
-    post_list = Article.objects.all()
-    return render(request, 'index.html', {'post_list' : post_list})
+# def index(request):
+#     post_list = Article.objects.all()
+#     return render(request, 'index.html', {'post_list' : post_list})
 
 def detail(request, id):
     try:
@@ -43,7 +43,7 @@ def notfound(request) :
 
 def index(request):
     posts = Article.objects.all()  #获取全部的Article对象
-    paginator = Paginator(posts, 5) #每页显示两个
+    paginator = Paginator(posts, 5) #每页显示五个
     page = request.GET.get('page')
     try:
         post_list = paginator.page(page)
