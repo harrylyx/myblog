@@ -10,7 +10,6 @@ class Article(models.Model) :
     date_time = models.DateTimeField(auto_now_add = True)
     shortContent = models.CharField(max_length = 100,blank = True, null = True)
     content = models.TextField(blank = True, null = True)
-    views = models.IntegerField(name = 0)
 
     def __unicode__(self) :
         return self.title

@@ -16,17 +16,9 @@ import markdown
 def detail(request, id):
     try:
         post = Article.objects.get(id=str(id))
-        post.content = markdown.markdown(post.content, extensions=['markdown.extensions.extra', 'markdown.extensions.codehilite'])
-        last_view = request.session.get('last_view')#获取最后一次浏览本站的时间last_view
-        if last_view:
-            last_visit_time = datetime.datetime.strptime(last_view[:-7], "%Y-%m-%d %H:%M:%S")
-        if datetime.datetime.now() >= last_visit_time + datetime.timedelta(minutes=5):#判断如果最后一次访问网站的时间大于5分钟，则浏览量+1
-            post.views += 1
-            post.save()
-        else:
-            post.views += 1
-            post.save()
-        request.session['last_view'] = str(datetime.datetime.now())#更新session
+        post.content = markdown.markdown(post.content,
+                                         extensions=['markdown.extensions.extra',
+                                                     'markdown.extensions.codehilite'])
     except Article.DoesNotExist:
         raise Http404
     return render(request, 'post.html', {'post': post})
@@ -62,4 +54,5 @@ def index(request):
     except EmptyPage:
         post_list = paginator.paginator(paginator.num_pages)
     return render(request, 'index.html', {'post_list': post_list})
+
 
