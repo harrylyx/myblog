@@ -16,6 +16,7 @@ import markdown
 def detail(request, id):
     try:
         post = Article.objects.get(id=str(id))
+<<<<<<< HEAD
         post.content = markdown.markdown(post.content, extensions=['markdown.extensions.extra', 'markdown.extensions.codehilite'])
         '''
         last_view = request.session.get('last_view')#获取最后一次浏览本站的时间last_view
@@ -29,6 +30,11 @@ def detail(request, id):
             post.save()
         request.session['last_view'] = str(datetime.datetime.now())#更新session
 	'''
+=======
+        post.content = markdown.markdown(post.content,
+                                         extensions=['markdown.extensions.extra',
+                                                     'markdown.extensions.codehilite'])
+>>>>>>> 039a35a9ce35b38bab317f04df786c954f82936e
     except Article.DoesNotExist:
         raise Http404
     return render(request, 'post.html', {'post': post})
@@ -64,4 +70,5 @@ def index(request):
     except EmptyPage:
         post_list = paginator.paginator(paginator.num_pages)
     return render(request, 'index.html', {'post_list': post_list})
+
 
