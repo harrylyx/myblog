@@ -142,6 +142,22 @@ a:hover, a:focus{
     padding: 1px 20px;
 }
 
+.aboutme-posts {
+    background-color: #fff;
+    padding: 1px 20px;
+}
+
+.aboutme-posts > i {
+    text-align: center;
+}
+.aboutme-posts > img{
+    text-align: center;
+    width: auto;
+    height : auto;
+    max-height: 100%;
+    max-width: 100%;
+}
+
 .post-posts {
     background-color: #fff;
     padding: 15px 25px;
