@@ -146,7 +146,7 @@ a:hover, a:focus{
     background-color: #fff;
     padding: 1px 20px;
     text-align:center;
-    display:block;
+
 }
 
 .aboutme-posts > i {
@@ -161,6 +161,7 @@ a:hover, a:focus{
     height :auto;
     max-height:50%;
     max-width:50%;
+    display:block;
 }
 
 .post-posts {
