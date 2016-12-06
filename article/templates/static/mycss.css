@@ -146,10 +146,14 @@ a:hover, a:focus{
     background-color: #fff;
     padding: 1px 20px;
     text-align:center;
+    display:block;
 }
 
 .aboutme-posts > i {
     text-align:center;
+    font-size:12px;
+    color:#999;
+
 }
 .aboutme-posts > img{
     text-align:center;
