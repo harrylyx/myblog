@@ -173,6 +173,15 @@ a:hover, a:focus{
 }
 
 @media (min-width: 768px) {
+    .aboutme-posts > img{
+        width:auto;
+        height :auto;
+        max-height:50%;
+        max-width:50%;
+        text-align:center;
+        margin:0  auto;
+        display:block;
+    }
     .row {
         margin-right: 15px;
         margin-left: -15px;
