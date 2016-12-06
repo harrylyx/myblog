@@ -157,10 +157,6 @@ a:hover, a:focus{
 }
 .aboutme-posts > img{
     text-align:center;
-    width:auto;
-    height :auto;
-    max-height:50%;
-    max-width:50%;
     margin:0  auto;
     display:block;
 }
