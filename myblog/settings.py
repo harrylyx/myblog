@@ -39,12 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'article',
     'markdown_deux',
-    'duoshuo',
+    'disqus',
 ]
 
-DUOSHUO_SECRET = 'c8f19075d7ee29e5d4dbfabff9a0937b'
-
-DUOSHUO_SHORT_NAME = 'Crazycabbage'
+DISQUS_API_KEY = 'OPuLbQ4u5n4vhLF3ogF10XTJQZtWOwX8eHgLfax09cOGTFradgNUEIQ0FVVSIfjI'
+DISQUS_WEBSITE_SHORTNAME = 'crazyc'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',

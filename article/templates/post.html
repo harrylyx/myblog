@@ -36,8 +36,8 @@
                             </p>
                         </div>
                 </section>
-                {% load duoshuo_tags %}
-                {% duoshuo_comments %}
+                {% load disqus_tags %}
+                {% disqus_show_comments %}                         
         </div><!-- /.blog-post -->
     </div>
 </div>
@@ -48,6 +48,5 @@ window.onload=function(){
         imgs[i].setAttribute('class','img-responsive');
     }
 }
-
 </script>
 {% endblock %}
