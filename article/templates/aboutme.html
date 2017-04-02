@@ -1,22 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li><a href="https://www.crazyc.cn">主页</a></li>
-            <li><a href="../archives/">归档</a></li>
-            <li class="active"><a href="../aboutme/">关于</a></li>
-        </ul>
-        <form class="navbar-form navbar-right" role="search" method="get">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" name="s">
-        </div>
-            <button type="submit" class="btn btn-default">搜索</button>
+<div class="layui-header header header-doc">
+    <div class="layui-main">
+        <form class="layui-form component"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <input type="text" name="" placeholder="搜索" autocomplete="off" class="layui-input">
+            </div>
+          </div>
         </form>
+        <ul class="layui-nav">
+          <li class="layui-nav-item layui-this"><a href="./">首页</a></li>
+          <li class="layui-nav-item"><a href="./archives">归档</a></li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">玩具</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+              <dd><a href="https://chat.crazyc.cn">聊天室</a></dd>
+              <dd><a href="https://ky.crazyc.cn">考研倒计时</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a href="./aboutme">关于我</a></li>
+        </ul>
     </div>
-</nav>
-<div class="posts aboutme-posts">
+</div>
+<div class="layui-main aboutme-posts">
         <img class="img-responsive" src="../static/2016-12-06 07.46.03.jpg" align="middle"/>
         <i>题图摄于重邮,2016-08-03</i>
         <h3>关于我</h3>
