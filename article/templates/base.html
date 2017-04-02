@@ -46,6 +46,11 @@
           
           //各种基于事件的操作，下面会有进一步介绍
         });
+        layui.use('code', function(){ //加载code模块
+          layui.code({
+            skin: 'notepad'
+          }); //引用code方法
+        });
       </script>
       <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
       <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=default"></script>
