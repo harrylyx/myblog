@@ -154,10 +154,18 @@ blockquote{
     background-color: #f2f2f2;
 }
 
-li{
-    list-style: square !important;
+blockquote p{
+    margin: 0;
 }
 
-p{
-    margin: 10px 0 !important;
+.post-description li{
+    list-style: disc;
+}
+
+.post-description p{
+    margin: 10px 0;
+}
+
+.post-description blockquote p{
+    margin: 0;
 }
