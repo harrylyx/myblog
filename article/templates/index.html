@@ -1,83 +1,105 @@
 {% extends "base.html" %}
 
 {% block content %}
-<nav class="navbar navbar-default" role="navigation">
-    <div class="container-fluid">
-        <ul class="nav navbar-nav">
-            <li class="active"><a href="https://www.crazyc.cn">主页</a></li>
-            <li><a href="../archives/">归档</a></li>
-            <li><a href="../aboutme/">关于</a></li>
-        </ul>
-        <form class="navbar-form navbar-right" role="search" method="get">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search" name="s">
-        </div>
-            <button type="submit" class="btn btn-default">搜索</button>
+<div class="layui-header header header-doc">
+    <div class="layui-main">
+        <form class="layui-form component"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
+          <div class="layui-form-item">
+            <div class="layui-input-block">
+              <input type="text" name="" placeholder="搜索" autocomplete="off" class="layui-input">
+            </div>
+          </div>
         </form>
+        <ul class="layui-nav">
+          <li class="layui-nav-item layui-this"><a href="">首页</a></li>
+          <li class="layui-nav-item"><a href="">归档</a></li>
+          <li class="layui-nav-item">
+            <a href="javascript:;">玩具</a>
+            <dl class="layui-nav-child"> <!-- 二级菜单 -->
+              <dd><a href="">聊天室</a></dd>
+              <dd><a href="">考研倒计时</a></dd>
+            </dl>
+          </li>
+          <li class="layui-nav-item"><a href="">关于我</a></li>
+        </ul>
     </div>
-</nav>
-<div class="posts">
-    {% for post in post_list %}
-    <div class="post-description">
-        <div class="jumbotron">
-            <section class="post">
-                <header class="post-header">
-                <h2 class="post-title"><a href="{% url 'detail' id=post.id %}">{{ post.title }}</a></h2>
+</div>
+<div class="layui-main">
+    <div class="posts">
+        {% for post in post_list %}
+        <div class="post-description">
+            <div class="jumbotron">
+                <section class="post">
+                    <header class="post-header">
+                    <h2 class="post-title"><a href="{% url 'detail' id=post.id %}">{{ post.title }}</a></h2>
 
-                        <p class="post-meta">
-                            Time:  <a class="post-author" href="#">{{ post.date_time }}</a> <a class="post-category post-category-js" href="#">{{ post.category|title }}</a>
+                            <p class="post-meta">
+                                Time:  <a class="post-author" href="#">{{ post.date_time }}</a> <a class="post-category post-category-js" href="#">{{ post.category|title }}</a>
+                            </p>
+                    </header>
+                    <div class="container">
+                        <p class="lead">
+                            {{ post.shortContent }}
                         </p>
-                </header>
-                <div class="container">
-                    <p class="lead">
-                        {{ post.shortContent }}
-                    </p>
-                </div>
-            </section>
-            <a class="btn btn-primary btn-lg" role="button" href="{% url 'detail' id=post.id  %}">Read More >>> </a>
+                    </div>
+                </section>
+            </div>
         </div>
-    </div>
-    {% endfor %}
+        {% endfor %}
 
-    <div class="pagination">
-        <span class="step-links">
-            {% if post_list.has_previous %}
-                <a href="?page={{ post_list.previous_page_number }}">上一页</a>
-            {% endif %}
-
-            <!-- <span class="current">
-                Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.
-            </span> -->
-
-            {% if post_list.has_next %}
-                <a href="?page={{ post_list.next_page_number }}">下一页</a>
-            {% endif %}
-        </span>
-    </div>
-
-    <!--
-    {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
-    <div class="pagination">
-        <nav>
-          <ul class="pager">
-            <li class="previous">
+        <div class="pagination layui-btn">
+            <span class="step-links">
                 {% if post_list.has_previous %}
-                <a href="?page={{ post_list.previous_page_number }}">
-                    <span aria-hidden="true">&larr;</span> Newer
-                </a>
+                    <a href="?page={{ post_list.previous_page_number }}">上一页</a>
                 {% endif %}
-            </li>
-            <li class="next">
+
+                <!-- <span class="current">
+                    Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.
+                </span> -->
+
                 {% if post_list.has_next %}
-                <a href="?page={{ post_list.next_page_number }}">Older
-                    <span aria-hidden="true">&rarr;</span>
-                </a>
+                    <a href="?page={{ post_list.next_page_number }}">下一页</a>
                 {% endif %}
-            </li>
-          </ul>
-        </nav>
-    </div>
-    {% endif %}
-    -->
-</div><!-- /.blog-post -->
+            </span>
+        </div>
+
+        <!--
+        {% if post_list.object_list and post_list.paginator.num_pages > 1 %}
+        <div class="pagination">
+            <nav>
+              <ul class="pager">
+                <li class="previous">
+                    {% if post_list.has_previous %}
+                    <a href="?page={{ post_list.previous_page_number }}">
+                        <span aria-hidden="true">&larr;</span> Newer
+                    </a>
+                    {% endif %}
+                </li>
+                <li class="next">
+                    {% if post_list.has_next %}
+                    <a href="?page={{ post_list.next_page_number }}">Older
+                        <span aria-hidden="true">&rarr;</span>
+                    </a>
+                    {% endif %}
+                </li>
+              </ul>
+            </nav>
+        </div>
+        {% endif %}
+        -->
+    </div><!-- /.blog-post -->
+</div>
+<script>
+    //注意：导航 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+      var element = layui.element();
+      
+      //…
+    });
+    layui.use('form', function(){
+      var form = layui.form();
+      
+      //各种基于事件的操作，下面会有进一步介绍
+    });
+</script>
 {% endblock %}
