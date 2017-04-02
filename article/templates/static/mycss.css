@@ -122,8 +122,15 @@ pre{
 
 .posts{
     margin: 0 30px;
+    background-color: #fff;
 }
 
 .posts h3{
     font-size: 20px;
+}
+
+.posts img{
+    max-width: 100%;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
