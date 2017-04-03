@@ -51,6 +51,14 @@
             skin: 'notepad'
           }); //引用code方法
         });
+        $up = $('.up');
+        $down = $('.down');
+        if(!$up.text()){
+            $up.remove();
+        }
+        if(!$down.text()){
+            $down.remove();
+        }
       </script>
       <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
       <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=default"></script>

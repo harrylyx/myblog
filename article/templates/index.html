@@ -49,7 +49,7 @@
 
         <div class="pagination">
             <span class="step-links">
-                <div class="layui-btn">
+                <div class="layui-btn up">
                     {% if post_list.has_previous %}
                         <a href="?page={{ post_list.previous_page_number }}">上一页</a>
                     {% endif %}
@@ -58,7 +58,7 @@
                 <!-- <span class="current">
                     Page {{ post_list.number }} of {{ post_list.paginator.num_pages }}.
                 </span> -->
-                <div class="layui-btn">
+                <div class="layui-btn down">
                     {% if post_list.has_next %}
                         <a href="?page={{ post_list.next_page_number }}">下一页</a>
                     {% endif %}
