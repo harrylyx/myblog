@@ -51,6 +51,13 @@
             skin: 'notepad'
           }); //引用code方法
         });
+        $(document).ready(function(){
+          var a=$(".div").html();
+          if(/^\s*?$/.test(a))
+              $(".layui-btn").hide();
+          else
+              $(".layui-btn").show();     
+        });
       </script>
       <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
       <script type="text/javascript" src="https://cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=default"></script>
